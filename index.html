@@ -6,8 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>weather</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <style>
+      .loader {
+        width: 100vw;
+        height: 100vh;
+        background: rgb(0, 0, 0);
+        position: absolute;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+      }
+      .loader span{
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        border: 10px solid rgb(24, 149, 252);
+        border-radius: 50%;
+        border-right-color: transparent;
+        animation: loader 1s linear infinite;
+      }
+      @keyframes loader{
+        0%{
+          transform: rotate(0deg);
+        }
+        100%{
+          transform: rotate(360deg);
+        }
+      }
+    </style>
 </head>
 <body style="background: url(image/pexels-lisa-1107717.jpg); background-size: cover; min-height: 100vh;">
+
+  <div class="loader">
+    <span></span>
+  </div>
     <div class="container text-center mt-5">
       
           <div class="input-group">

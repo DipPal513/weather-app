@@ -1,6 +1,14 @@
 
 // gloabal variable
 
+// loader
+
+
+const loader = document.querySelector('.loader');
+window.addEventListener('load',()=>{
+    loader.style.display = 'none';
+})
+
 const input = document.querySelector('input');
 const searchBtn = document.querySelector('search-btn');
 
