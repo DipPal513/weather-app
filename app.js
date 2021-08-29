@@ -11,16 +11,24 @@ window.addEventListener('load',()=>{
 
 const input = document.querySelector('input');
 const searchBtn = document.querySelector('search-btn');
+const displayError =document.getElementById('displayError');
 
+const searchWeather = async () =>{
+    if(input.value == ''){
+        const errorDiv = document.createElement('div');
+        errorDiv.innerHTML =` <h2 class="p-4 bg-danger">No Search Results Found</h2>`
+       
+        console.log(errorDiv.innerText)
+        displayError.textContent = '';
+        displayError.appendChild(errorDiv);
+    }
+    else{
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${input.value}&appid=40efc1d2374da0d8848db007f252200f`;
+        const res =    await fetch(url)
+        const data = await res.json()
 
-if(input.value == ''){
-    
-}
- 
-const searchWeather = () =>{
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input.value}&appid=40efc1d2374da0d8848db007f252200f`)
-        .then(res => res.json())
-        .then(data => displayWeather(data))
+        displayWeather(data)
+    }    
 }
 
 const displayWeather =(data)=>{
