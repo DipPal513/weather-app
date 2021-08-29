@@ -38,7 +38,7 @@ const displayWeather =(data)=>{
     div.className = 'text-center '
     div.innerHTML = 
     `
-    <div class="card" style="width: 30rem; backdrop-filter:blur(20px); color:#fff;padding:30px; background:#ffffff26;>
+    <div class="card" style="width:calc(100vh-70vh); backdrop-filter:blur(20px); color:#fff;padding:30px; background:#ffffff26;>
         <img src="..." class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">${data.name}</h5>
